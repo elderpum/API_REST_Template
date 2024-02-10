@@ -3,6 +3,7 @@ const cors = require('cors'); // Import cors
 const app = express();
 const morgan = require("morgan");
 const router = require("./Routes/router");
+const connect = require("./Config/database");
 
 // OPTIONS
 app.set("port", 3000);
@@ -19,6 +20,9 @@ app.use(cors({
     origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
 }));
+
+// CONNECT DB
+//connect.connect(); // Activar para conectar a la base de datos
 
 //MIDDLEWARE
 
